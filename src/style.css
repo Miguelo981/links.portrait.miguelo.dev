@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Barlow", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #094067;
+}
+
+p {
+  color: #5f6c7b;
+}
+
+@layer components {
+  .username {
+    @apply text-3xl font-bold;
+  }
+
+  body {
+    @apply bg-main;
+  }
+
+  .main-card {
+    @apply rounded-2xl bg-white shadow-md;
+  }
+
+  .link-btn {
+    @apply text-center py-2 bg-primary hover:bg-transparent rounded-md text-lg text-white hover:text-primary border-transparent hover:border-primary border-2;
+  }
+
+  .contact-btn {
+    @apply py-2 w-full rounded-md flex justify-center hover:opacity-80 duration-200 ease-in-out transition;
+  }
+
+  .banner-header-bg {
+    background-image: linear-gradient(
+        to right,
+        rgba(245, 246, 252, 0.52),
+        rgba(30, 13, 78, 0.73)
+      ),
+      url("/images/banner.avif");
+    @apply bg-no-repeat bg-cover w-full h-36;
+  }
+
+  .sn-icon {
+    @apply cursor-pointer fill-primary;
+  }
+
+  .zoom-in {
+    @apply transition ease-in hover:scale-125 duration-200;
+  }
+}
