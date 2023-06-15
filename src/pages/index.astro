@@ -1,0 +1,64 @@
+---
+import '../style.css'
+import SocialNetworksList from '../components/SocialNetworksList.astro'
+import { groups } from '../mocks/links.mock';
+import type { LinkTree } from '../models/link';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Miguelo Portrait Links</title>
+	</head>
+	<body class="flex justify-center items-center min-h-screen p-5 scrollbar">
+		<main class="space-y-[10%] h-full">
+			<article class="main-card flex flex-col w-full">
+				<div class="banner-header-bg rounded-t-2xl" />
+				<div class="relative divide-y-[0.25px] divide-gray-300 dark:divide-secondary">
+					<header class="text-center pb-4 p-6">
+						<div class="absolute -top-14 left-0 flex justify-center w-full">
+							<img class="rounded-full aspect-square object-cover h-28 w-auto shadow-lg border-4 border-primary" 
+								src="/images/profile-pic.avif" alt="profile pic">
+						</div>
+						<h1 class="username mt-10 text-animated">Miguelo Portrait</h1>
+						<span class="font-light">24 años | 1.87cm | 🇮🇨</span>
+						<p class="user-description mt-3">Explorando la creatividad a través de la moda y fotografía 📸</p>
+						<p class="user-description">¡Únete a mi viaje y descubre mi estilo único! ✨</p>
+						<SocialNetworksList />
+					</header>
+					<!-- Link tree list -->
+					<!-- <section class="pt-1 pb-6 px-6 rounded-b-2xl">
+						{
+							groups.map(group => (
+								<h2 class="text-center my-4 text-lg font-semibold">{group.title}</h2>
+								<div class="flex flex-col space-y-3">
+									{
+										group.links.map((link: LinkTree) => 
+											(
+												<a href={link.link} class="link-btn">
+													<span>{link.title}</span>
+													<img class={link.icon ? 'block h-5 w-auto' : 'hidden'} src={link.icon} alt="">
+												</a>
+											))
+									}
+								</div>
+							))
+						}
+						{/*<div class="mt-12">
+							<ContactBtn />
+						</div>*/}
+					</section> -->
+				</div>
+				<footer class="py-5 border-t border-gray-300 dark:border-secondary">
+					<h4 class="text-center text-xl font-light">Miguelo Links © { new Date().getFullYear() }</h4>
+				</footer>
+			</article>
+		</main>
+	</body>
+</html>
