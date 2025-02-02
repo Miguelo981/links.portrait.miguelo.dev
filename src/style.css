@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-main: #fffffe;
+  --color-primary: #3da9fc;
+  --color-secondary: #90b4ce;
+  --color-ternary: #ef4565;
+}
 
 body {
   font-family: "Barlow", sans-serif;
